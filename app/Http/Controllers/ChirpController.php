@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chirp;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
+use Illuminate\View\View;use Illuminate\Http\RedirectResponse;
 
 
 class ChirpController extends Controller
@@ -54,7 +54,7 @@ class ChirpController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Chirp $chirp):View
+    public function edit(Chirp $chirp): View
     {
         $this->authorize('update', $chirp);
 
@@ -66,7 +66,7 @@ class ChirpController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Chirp $chirp):RedirectResponse
+    public function update(Request $request, Chirp $chirp): RedirectResponse
     {
         $this->authorize('update', $chirp);
 
